@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="armascuerpo" format=3 uid="uid://cp44a166ag6sh"]
+
+[ext_resource type="PackedScene" uid="uid://ce66mt6ehs3ku" path="res://Escenas/palo.tscn" id="1_jjkpj"]
+[ext_resource type="Script" uid="uid://b403g2d580v55" path="res://Escenas/Mejoras.gd" id="2_dn5u5"]
+[ext_resource type="Script" uid="uid://dnavptlclp46i" path="res://Escenas/armascuerpo.gd" id="2_qawqx"]
+[ext_resource type="Texture2D" uid="uid://me4tuxy5xcrd" path="res://Assets/Armas/Palo/Icono/Palito_mueve_hojas_0001.png" id="3_dn5u5"]
+[ext_resource type="AudioStream" uid="uid://bmifwal0nh7bb" path="res://Assets/Sonidos/corte_aire_capibara.wav" id="4_dn5u5"]
+[ext_resource type="Texture2D" uid="uid://cposncg3y8vsw" path="res://Assets/Armas/Palo/Icono/Palito_mueve_hojas_0002.png" id="4_qx5by"]
+[ext_resource type="Texture2D" uid="uid://cg4bg8bv8tafe" path="res://Assets/Armas/Palo/Icono/Palito_mueve_hojas_0003.png" id="5_juxr7"]
+[ext_resource type="Texture2D" uid="uid://bl6m6fqmxabwt" path="res://Assets/Armas/Palo/Icono/Palito_mueve_hojas_0004.png" id="6_jxi0o"]
+[ext_resource type="Texture2D" uid="uid://v7hysuf3ojm5" path="res://Assets/Armas/Palo/Icono/Palito_mueve_hojas_0005.png" id="7_0csfg"]
+
+[sub_resource type="Resource" id="Resource_a2ysu"]
+script = ExtResource("2_dn5u5")
+"daño" = 2.0
+descripcion = "+2 de daño"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_u4kj1"]
+script = ExtResource("2_dn5u5")
+recarga = -0.2
+descripcion = "-0.2s de recarga"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_8c0t1"]
+script = ExtResource("2_dn5u5")
+"daño" = 2.0
+descripcion = "+2 de daño"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_m3eqn"]
+script = ExtResource("2_dn5u5")
+"daño" = 3.0
+descripcion = "+3 de daño"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_1ogib"]
+script = ExtResource("2_dn5u5")
+"daño" = 3.0
+recarga = -0.2
+descripcion = "+3 de daño, -0.2s de recarga"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6081i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dn5u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qx5by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_juxr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jxi0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0csfg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_qawqx")
+escena_ataque = ExtResource("1_jjkpj")
+distancia = 25.0
+solo_frente = true
+titulo = "Palito"
+sprites = SubResource("SpriteFrames_6081i")
+duracion = 1.0
+danio = 8.0
+recarga = 1.5
+sonido_golpe = ExtResource("4_dn5u5")
+mejoras = Array[ExtResource("2_dn5u5")]([SubResource("Resource_a2ysu"), SubResource("Resource_u4kj1"), SubResource("Resource_8c0t1"), SubResource("Resource_m3eqn"), SubResource("Resource_1ogib")])
+metadata/_custom_type_script = "uid://dnavptlclp46i"

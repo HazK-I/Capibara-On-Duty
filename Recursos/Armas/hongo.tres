@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="armahongo" format=3 uid="uid://dpd1e5cirqnyw"]
+
+[ext_resource type="PackedScene" uid="uid://bvm1lggksvdko" path="res://Escenas/hongo.tscn" id="1_b4ckk"]
+[ext_resource type="Script" uid="uid://b403g2d580v55" path="res://Escenas/Mejoras.gd" id="2_a2ysu"]
+[ext_resource type="Texture2D" uid="uid://ddlol46jnvrrk" path="res://Assets/Armas/Hongo/Icono/Seta_0001.png" id="3_a2ysu"]
+[ext_resource type="Script" uid="uid://vptvs2n7vo0k" path="res://Escenas/MejorasHongo.gd" id="3_u4kj1"]
+[ext_resource type="Script" uid="uid://dfweg0xkjw4pg" path="res://Escenas/Hongo.gd" id="4_a2ysu"]
+[ext_resource type="Texture2D" uid="uid://q6l2qjng56l5" path="res://Assets/Armas/Hongo/Icono/Seta_0002.png" id="4_u4kj1"]
+[ext_resource type="Texture2D" uid="uid://by2ub28i5b1i7" path="res://Assets/Armas/Hongo/Icono/Seta_0003.png" id="5_8c0t1"]
+[ext_resource type="AudioStream" uid="uid://tpcg7pic8tqu" path="res://Assets/Sonidos/humo_capibara.wav" id="5_u4kj1"]
+[ext_resource type="Texture2D" uid="uid://ndv1v8wju5un" path="res://Assets/Armas/Hongo/Icono/Seta_0004.png" id="6_m3eqn"]
+[ext_resource type="Texture2D" uid="uid://cugi8s16a50mm" path="res://Assets/Armas/Hongo/Icono/Seta_0005.png" id="7_1ogib"]
+[ext_resource type="Texture2D" uid="uid://cvrlnmtgudm7m" path="res://Assets/Armas/Hongo/Icono/Seta_0006.png" id="8_28dbf"]
+
+[sub_resource type="Resource" id="Resource_8c0t1"]
+script = ExtResource("3_u4kj1")
+area = 0.2
+"daño" = 1.0
+descripcion = "+20% de área, +1 de daño"
+metadata/_custom_type_script = "uid://vptvs2n7vo0k"
+
+[sub_resource type="Resource" id="Resource_bmgc8"]
+script = ExtResource("3_u4kj1")
+"daño" = 1.0
+recarga = -0.2
+descripcion = "+1 de daño, -0.2s de recarga"
+metadata/_custom_type_script = "uid://vptvs2n7vo0k"
+
+[sub_resource type="Resource" id="Resource_d8lex"]
+script = ExtResource("3_u4kj1")
+area = 0.3
+descripcion = "+30% de área"
+metadata/_custom_type_script = "uid://vptvs2n7vo0k"
+
+[sub_resource type="Resource" id="Resource_yo4kt"]
+script = ExtResource("3_u4kj1")
+"daño" = 2.0
+recarga = -0.2
+descripcion = "+2 de daño, -0.2s de recarga"
+metadata/_custom_type_script = "uid://vptvs2n7vo0k"
+
+[sub_resource type="Resource" id="Resource_15krf"]
+script = ExtResource("3_u4kj1")
+area = 0.3
+"daño" = 1.0
+descripcion = "+30% de área, +1 de daño"
+metadata/_custom_type_script = "uid://vptvs2n7vo0k"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4v03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a2ysu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u4kj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8c0t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m3eqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1ogib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_28dbf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("4_a2ysu")
+escena_ataque = ExtResource("1_b4ckk")
+distancia = 0.0
+empuje = 0.0
+solo_frente = true
+titulo = "Hongo"
+sprites = SubResource("SpriteFrames_j4v03")
+duracion = 2.0
+danio = 4.0
+recarga = 2.0
+sonido_golpe = ExtResource("5_u4kj1")
+mejoras = Array[ExtResource("2_a2ysu")]([SubResource("Resource_8c0t1"), SubResource("Resource_bmgc8"), SubResource("Resource_d8lex"), SubResource("Resource_yo4kt"), SubResource("Resource_15krf")])
+metadata/_custom_type_script = "uid://dnavptlclp46i"

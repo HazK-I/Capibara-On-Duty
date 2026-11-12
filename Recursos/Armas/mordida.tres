@@ -1,0 +1,103 @@
+[gd_resource type="Resource" script_class="armascuerpo" format=3 uid="uid://dcgflvghhxfrd"]
+
+[ext_resource type="PackedScene" uid="uid://ixdcbnrvenr3" path="res://Escenas/mordida.tscn" id="1_pdj8a"]
+[ext_resource type="Script" uid="uid://b403g2d580v55" path="res://Escenas/Mejoras.gd" id="2_a4y73"]
+[ext_resource type="Script" uid="uid://dnavptlclp46i" path="res://Escenas/armascuerpo.gd" id="2_ajlbv"]
+[ext_resource type="Texture2D" uid="uid://7mky0cjnc0t7" path="res://Assets/Armas/Mordida/Icono/mordida_0001.png" id="3_a4y73"]
+[ext_resource type="AudioStream" uid="uid://bpdou10b1rwfe" path="res://Assets/Sonidos/mordida_agresiva_capibara.wav" id="4_a4y73"]
+[ext_resource type="Texture2D" uid="uid://du4nvcxloqtjv" path="res://Assets/Armas/Mordida/Icono/mordida_0002.png" id="4_g2qgp"]
+[ext_resource type="Texture2D" uid="uid://b3oou38hyvovo" path="res://Assets/Armas/Mordida/Icono/mordida_0003.png" id="5_8tyiv"]
+[ext_resource type="Texture2D" uid="uid://cwqdf0wruy6m" path="res://Assets/Armas/Mordida/Icono/mordida_0004.png" id="6_1qm40"]
+[ext_resource type="Texture2D" uid="uid://d4k21qpm3t6u7" path="res://Assets/Armas/Mordida/Icono/mordida_0005.png" id="7_01qi6"]
+[ext_resource type="Texture2D" uid="uid://dgo0dx8q5upt0" path="res://Assets/Armas/Mordida/Icono/mordida_0006.png" id="8_ebau5"]
+[ext_resource type="Texture2D" uid="uid://cjxd0c3st44m8" path="res://Assets/Armas/Mordida/Icono/mordida_0007.png" id="9_q5gpu"]
+[ext_resource type="Texture2D" uid="uid://vxlft42pvnsa" path="res://Assets/Armas/Mordida/Icono/mordida_0008.png" id="10_5607h"]
+[ext_resource type="Texture2D" uid="uid://df8p1w7t1epbd" path="res://Assets/Armas/Mordida/Icono/mordida_0009.png" id="11_4op8k"]
+[ext_resource type="Texture2D" uid="uid://b6w50fsu6jx8f" path="res://Assets/Armas/Mordida/Icono/mordida_0010.png" id="12_p6sm6"]
+
+[sub_resource type="Resource" id="Resource_c3i8v"]
+script = ExtResource("2_a4y73")
+"daño" = 2.0
+descripcion = "+2 de daño"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_3abu2"]
+script = ExtResource("2_a4y73")
+"daño" = 1.0
+recarga = -0.2
+descripcion = "+1 de daño. -0.2s de recarga"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_narje"]
+script = ExtResource("2_a4y73")
+"daño" = 1.0
+descripcion = "+1 de daño"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_5ty5g"]
+script = ExtResource("2_a4y73")
+"daño" = 1.0
+recarga = -0.2
+descripcion = "+1 de daño, -0.2s de recarga"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="Resource" id="Resource_mg3sq"]
+script = ExtResource("2_a4y73")
+"daño" = 2.0
+recarga = -0.1
+descripcion = "+2 de daño
+-0.1s de recarga
+"
+metadata/_custom_type_script = "uid://b403g2d580v55"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg3sq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a4y73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2qgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8tyiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1qm40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_01qi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ebau5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q5gpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5607h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4op8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_p6sm6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("2_ajlbv")
+escena_ataque = ExtResource("1_pdj8a")
+distancia = 30.0
+solo_frente = true
+titulo = "Mordida"
+sprites = SubResource("SpriteFrames_mg3sq")
+duracion = 1.0
+danio = 5.0
+recarga = 1.0
+sonido_golpe = ExtResource("4_a4y73")
+mejoras = Array[ExtResource("2_a4y73")]([SubResource("Resource_c3i8v"), SubResource("Resource_3abu2"), SubResource("Resource_narje"), SubResource("Resource_5ty5g"), SubResource("Resource_mg3sq")])
+metadata/_custom_type_script = "uid://dnavptlclp46i"

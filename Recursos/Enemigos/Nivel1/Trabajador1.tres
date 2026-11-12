@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Enemigo" format=3 uid="uid://dg4if0betnhn1"]
+
+[ext_resource type="Script" uid="uid://r2k15rj0q3ij" path="res://Escenas/tipoenemigo.gd" id="1_h4sa1"]
+[ext_resource type="Script" uid="uid://b0kx1muht245o" path="res://Escenas/RecursosRecogibles.gd" id="1_xoo40"]
+[ext_resource type="Texture2D" uid="uid://3grae7nay2il" path="res://Assets/Enemigos/Trabajador/Trabajador_complete_0001.png" id="2_viyxk"]
+[ext_resource type="Resource" uid="uid://der8722324a2b" path="res://Recursos/Recogibles/gorrito.tres" id="2_ytsh5"]
+[ext_resource type="Texture2D" uid="uid://bcfe4jkwllk61" path="res://Assets/Enemigos/Trabajador/Trabajador_complete_0002.png" id="3_6hfek"]
+[ext_resource type="Texture2D" uid="uid://b2pv2k424d1wc" path="res://Assets/Enemigos/Trabajador/Trabajador_complete_0003.png" id="4_g6emn"]
+[ext_resource type="Texture2D" uid="uid://bk8s7kluh5kq1" path="res://Assets/Enemigos/Trabajador/Trabajador_complete_0004.png" id="5_xoo40"]
+[ext_resource type="Texture2D" uid="uid://dsh0nsrgfusx1" path="res://Assets/Enemigos/Trabajador/Trabajador_complete_0005.png" id="6_ytsh5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3i8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_viyxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6hfek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g6emn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xoo40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ytsh5")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_h4sa1")
+titulo = "Trabajador1"
+frames = SubResource("SpriteFrames_c3i8v")
+vida = 10.0
+"daño" = 2.0
+escala = Vector2(0.75, 0.75)
+dejar = Array[ExtResource("1_xoo40")]([ExtResource("2_ytsh5")])
+metadata/_custom_type_script = "uid://r2k15rj0q3ij"
