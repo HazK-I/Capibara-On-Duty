@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bvm1lggksvdko"]
+
+[ext_resource type="Texture2D" uid="uid://c875aomlln08h" path="res://Assets/Armas/Hongo/Efecto/atack_seta_0001.png" id="1_hoxsk"]
+[ext_resource type="Script" uid="uid://cst65hv7lghoj" path="res://Escenas/AtaqueHongo.gd" id="1_j4v03"]
+[ext_resource type="Texture2D" uid="uid://c05qr2gopxmo7" path="res://Assets/Armas/Hongo/Efecto/atack_seta_0002.png" id="2_j4v03"]
+[ext_resource type="Texture2D" uid="uid://cst287ocnytrq" path="res://Assets/Armas/Hongo/Efecto/atack_seta_0003.png" id="3_htp24"]
+[ext_resource type="Texture2D" uid="uid://x1g5nqemafdn" path="res://Assets/Armas/Hongo/Efecto/atack_seta_0004.png" id="4_pqwsj"]
+[ext_resource type="Texture2D" uid="uid://dqp54i3nyh30b" path="res://Assets/Armas/Hongo/Efecto/atack_seta_0005.png" id="5_jtqoe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdlr2"]
+radius = 62.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbxvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hoxsk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j4v03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_htp24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pqwsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jtqoe")
+}],
+"loop": 1,
+"name": &"atacar",
+"speed": 5.0
+}]
+
+[node name="Hongo" type="Area2D" unique_id=1678106483]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_j4v03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1030690274]
+shape = SubResource("CircleShape2D_gdlr2")
+one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=189571324]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_cbxvy")
+animation = &"atacar"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_frame_changed"]

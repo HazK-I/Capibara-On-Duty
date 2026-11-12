@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bv6qwnr18a2td"]
+
+[ext_resource type="Script" uid="uid://dgfs58xhrtuw5" path="res://Escenas/contenedor.gd" id="1_bd40u"]
+[ext_resource type="Texture2D" uid="uid://dox3rjda04b5g" path="res://Assets/UI/Menus/Cuadra_do.png" id="2_e5ko6"]
+
+[node name="Contenedor" type="PanelContainer" unique_id=791842614]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bd40u")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1246429354]
+layout_mode = 2
+texture = ExtResource("2_e5ko6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect" unique_id=1654159835]
+position = Vector2(40, 40)
+scale = Vector2(2, 2)
+
+[node name="Recarga" type="Timer" parent="." unique_id=509705320]
+autostart = true
+
+[connection signal="timeout" from="Recarga" to="." method="_on_recarga_timeout"]

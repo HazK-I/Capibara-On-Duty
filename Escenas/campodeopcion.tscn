@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dp48rsk6k23x5"]
+
+[ext_resource type="Script" uid="uid://bhp5bi26c2gi7" path="res://Escenas/campodeopcion.gd" id="1_8enng"]
+[ext_resource type="Texture2D" uid="uid://hrggfr5yksjy" path="res://Assets/UI/Menus/Contenedor_limite.png" id="2_p0puk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbxvy"]
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdlr2"]
+font_size = 27
+
+[node name="Campodeopcion" type="TextureButton" unique_id=650000171]
+custom_minimum_size = Vector2(1080, 100)
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1081.0
+offset_bottom = 91.0
+mouse_filter = 1
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("1_8enng")
+
+[node name="Label" type="Label" parent="." unique_id=823802060]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 144.0
+offset_top = -1.0
+offset_right = 327.0
+offset_bottom = 99.0
+label_settings = SubResource("LabelSettings_cbxvy")
+vertical_alignment = 1
+
+[node name="Descripcion" type="Label" parent="." unique_id=1971712941]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_left = 331.0
+offset_right = 1077.0
+offset_bottom = 100.0
+label_settings = SubResource("LabelSettings_gdlr2")
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=978479971]
+show_behind_parent = true
+custom_minimum_size = Vector2(1080, 100)
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1079.0
+offset_bottom = 99.0
+texture = ExtResource("2_p0puk")
+patch_margin_left = 54
+patch_margin_top = 16
+patch_margin_right = 55
+patch_margin_bottom = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1006809191]
+position = Vector2(87, 49)
+scale = Vector2(2.1, 2.1)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d30e3ljx4hhoa"]
+
+[ext_resource type="Script" uid="uid://dts5m6cehvr2n" path="res://Escenas/spawner.gd" id="1_xqvlp"]
+[ext_resource type="PackedScene" uid="uid://hfw7p8pffyqu" path="res://Escenas/enemigo.tscn" id="2_ogidl"]
+[ext_resource type="Script" uid="uid://coitw6tuvspb7" path="res://Escenas/elite.gd" id="3_02m3o"]
+
+[sub_resource type="Theme" id="Theme_ogidl"]
+default_font_size = 35
+
+[node name="Spawner" type="Node2D" unique_id=918154960]
+script = ExtResource("1_xqvlp")
+enemigo = ExtResource("2_ogidl")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2011706126]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=7643131]
+offset_left = 907.0
+offset_top = 50.0
+offset_right = 1005.0
+offset_bottom = 99.0
+theme = SubResource("Theme_ogidl")
+alignment = 1
+
+[node name="Minuto" type="Label" parent="UI/HBoxContainer" unique_id=847257165]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="Label2" type="Label" parent="UI/HBoxContainer" unique_id=2039394292]
+layout_mode = 2
+text = ":"
+
+[node name="Segundos" type="Label" parent="UI/HBoxContainer" unique_id=1376097284]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="Timer" type="Timer" parent="." unique_id=1665555450]
+autostart = true
+
+[node name="Patter" type="Timer" parent="." unique_id=1081274085]
+wait_time = 10.0
+autostart = true
+
+[node name="Enojo" type="Timer" parent="." unique_id=525677376]
+wait_time = 9.0
+autostart = true
+script = ExtResource("3_02m3o")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Patter" to="." method="_on_patter_timeout"]
+[connection signal="timeout" from="Enojo" to="." method="_on_enojo_timeout"]

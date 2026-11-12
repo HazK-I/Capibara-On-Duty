@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ixdcbnrvenr3"]
+
+[ext_resource type="Script" uid="uid://8mxdxptl7h7o" path="res://Escenas/mordida.gd" id="1_2jwwq"]
+[ext_resource type="Texture2D" uid="uid://7uqh72ihwqno" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0001.png" id="2_8j8eo"]
+[ext_resource type="Texture2D" uid="uid://1jpk5om1h82c" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0002.png" id="3_wqhte"]
+[ext_resource type="Texture2D" uid="uid://bwwiw8avkph88" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0003.png" id="4_2atoe"]
+[ext_resource type="Texture2D" uid="uid://ccbortrd4kery" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0004.png" id="5_u5smo"]
+[ext_resource type="Texture2D" uid="uid://crnv4ecemua7p" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0005.png" id="6_5uda2"]
+[ext_resource type="Texture2D" uid="uid://knvdl6qqa1vw" path="res://Assets/Armas/Mordida/Efecto/Derecha/efecto_mordida_0006.png" id="7_riyk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxvy"]
+size = Vector2(17, 23.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbxvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8j8eo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wqhte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2atoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u5smo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5uda2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_riyk6")
+}],
+"loop": 0,
+"name": &"morder",
+"speed": 6.0
+}]
+
+[node name="Mordida" type="Area2D" unique_id=815355100]
+position = Vector2(0, 1)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2jwwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=885093575]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_cbxvy")
+disabled = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1237585822]
+position = Vector2(0, -1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426203288]
+sprite_frames = SubResource("SpriteFrames_cbxvy")
+animation = &"morder"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

@@ -1,0 +1,245 @@
+[gd_scene format=3 uid="uid://qisert7je2km"]
+
+[ext_resource type="Script" uid="uid://bkpt525yh8sgq" path="res://Escenas/jugador.gd" id="1_16k11"]
+[ext_resource type="Texture2D" uid="uid://c4uip0cg5dpnp" path="res://Assets/Capibara/Capibaranewww_0001.png" id="2_66cid"]
+[ext_resource type="PackedScene" uid="uid://bv6qwnr18a2td" path="res://Escenas/contenedor.tscn" id="2_fnc7j"]
+[ext_resource type="Texture2D" uid="uid://bmynlqlpkjwp6" path="res://Assets/UI/Menus/Subida_de_nivel.png" id="2_srao3"]
+[ext_resource type="Texture2D" uid="uid://mbn734bvo0he" path="res://Assets/UI/Exp/Capibara_xp_negro.png" id="2_u4ymj"]
+[ext_resource type="Texture2D" uid="uid://cf2kim3pne231" path="res://Assets/UI/Exp/Borde_xp_0001.png" id="3_3doo3"]
+[ext_resource type="Resource" uid="uid://dcgflvghhxfrd" path="res://Recursos/Armas/mordida.tres" id="3_lkbdx"]
+[ext_resource type="Texture2D" uid="uid://ddwrxyju78low" path="res://Assets/Capibara/Capibaranewww_0002.png" id="3_mb0pc"]
+[ext_resource type="Texture2D" uid="uid://c4hu3tkn8vy2q" path="res://Assets/UI/Exp/Capibara_xp_cremita.png" id="4_pjyyr"]
+[ext_resource type="Texture2D" uid="uid://cfniebeehbefc" path="res://Assets/Capibara/Capibaranewww_0003.png" id="4_wkbbf"]
+[ext_resource type="Script" uid="uid://bdlhlk83381ve" path="res://Escenas/OpcionesNivel.gd" id="5_3doo3"]
+[ext_resource type="Texture2D" uid="uid://bw820tx0l32w5" path="res://Assets/Capibara/Capibaranewww_0004.png" id="5_u4ymj"]
+[ext_resource type="Texture2D" uid="uid://d258h8qsnvmai" path="res://Assets/Capibara/Capibaranewww_0005.png" id="6_3doo3"]
+[ext_resource type="Texture2D" uid="uid://cghr63icaf67p" path="res://Assets/Capibara/Capibaranewww_0006.png" id="7_pjyyr"]
+[ext_resource type="Texture2D" uid="uid://cygwvhoo857gx" path="res://Assets/UI/Menus/Botón_Regresar.png" id="9_srao3"]
+[ext_resource type="Script" uid="uid://db3qoormljgls" path="res://Escenas/volver.gd" id="9_tg0k3"]
+[ext_resource type="Texture2D" uid="uid://dwseisdyj3mr1" path="res://Assets/UI/Vida/Barra_vida_0003.png" id="17_ovsq0"]
+[ext_resource type="Texture2D" uid="uid://b3h2mv054srjh" path="res://Assets/UI/Vida/Barra_vida_0001.png" id="18_u04cl"]
+[ext_resource type="Texture2D" uid="uid://c4c6tlb223q6w" path="res://Assets/UI/Vida/Barra_vida_0002.png" id="19_h2lrk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbxvy"]
+font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4ymj"]
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_cbxvy"]
+default_font_size = 48
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbxvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_66cid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mb0pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wkbbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u4ymj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3doo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pjyyr")
+}],
+"loop": 1,
+"name": &"Caminar",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlr2"]
+size = Vector2(34, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbxvy"]
+size = Vector2(34, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbxvy"]
+radius = 31.016125
+
+[node name="Jugador" type="CharacterBody2D" unique_id=510993648]
+script = ExtResource("1_16k11")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=838972921]
+
+[node name="Panel" type="NinePatchRect" parent="CanvasLayer" unique_id=1276559298]
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(1100, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -671.5
+offset_top = -386.0
+offset_right = 671.5
+offset_bottom = 386.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_srao3")
+patch_margin_left = 86
+patch_margin_top = 85
+patch_margin_right = 51
+patch_margin_bottom = 28
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=915549323]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -273.0
+offset_top = 83.0
+offset_right = 273.0
+offset_bottom = 176.0
+grow_horizontal = 2
+text = "SUBIDA DE NIVEL"
+label_settings = SubResource("LabelSettings_cbxvy")
+
+[node name="Armas" type="HBoxContainer" parent="CanvasLayer" unique_id=101530542]
+offset_left = 10.0
+offset_top = 89.0
+offset_right = 342.0
+offset_bottom = 169.0
+
+[node name="Contenedor" parent="CanvasLayer/Armas" unique_id=791842614 instance=ExtResource("2_fnc7j")]
+layout_mode = 2
+armas = ExtResource("3_lkbdx")
+
+[node name="Contenedor2" parent="CanvasLayer/Armas" unique_id=1877452053 instance=ExtResource("2_fnc7j")]
+layout_mode = 2
+
+[node name="Contenedor3" parent="CanvasLayer/Armas" unique_id=356719160 instance=ExtResource("2_fnc7j")]
+layout_mode = 2
+
+[node name="Contenedor4" parent="CanvasLayer/Armas" unique_id=244047923 instance=ExtResource("2_fnc7j")]
+layout_mode = 2
+
+[node name="Experiencia" type="TextureProgressBar" parent="CanvasLayer" unique_id=2019289912]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = -40.0
+offset_right = 1921.0
+offset_bottom = 80.0
+max_value = 10.0
+nine_patch_stretch = true
+stretch_margin_left = 250
+texture_under = ExtResource("2_u4ymj")
+texture_over = ExtResource("3_3doo3")
+texture_progress = ExtResource("4_pjyyr")
+
+[node name="Nivel" type="Label" parent="CanvasLayer/Experiencia" unique_id=90674199]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1704.0
+offset_top = 38.0
+offset_right = 1887.0
+offset_bottom = 139.0
+text = "Nivel 0
+"
+label_settings = SubResource("LabelSettings_u4ymj")
+
+[node name="Opciones" type="VBoxContainer" parent="CanvasLayer" unique_id=239853483 node_paths=PackedStringArray("armas", "panel")]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_3doo3")
+armas = NodePath("../Armas")
+panel = NodePath("../Panel")
+
+[node name="Volver" type="TextureButton" parent="CanvasLayer" unique_id=217093948]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 84.0
+offset_right = 193.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cbxvy")
+texture_normal = ExtResource("9_srao3")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("9_tg0k3")
+
+[node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=1872081383]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_cbxvy")
+animation = &"Caminar"
+frame_progress = 0.91294414
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066089972]
+shape = SubResource("RectangleShape2D_gdlr2")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=919525990]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Colision" type="CollisionShape2D" parent="HitBox" unique_id=1635650267]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_cbxvy")
+
+[node name="Vida" type="TextureProgressBar" parent="." unique_id=931940046]
+unique_name_in_owner = true
+offset_left = -51.0
+offset_top = -27.0
+offset_right = 51.0
+offset_bottom = -19.0
+step = 0.01
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("17_ovsq0")
+texture_over = ExtResource("18_u04cl")
+texture_progress = ExtResource("19_h2lrk")
+
+[node name="Timer" type="Timer" parent="." unique_id=2101335437]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=277974479]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Absorber" type="Area2D" parent="." unique_id=724195890]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Absorber" unique_id=1058963600]
+shape = SubResource("CircleShape2D_cbxvy")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=148215218]
+custom_minimum_size = Vector2(60, 60)
+offset_left = -313.0
+offset_top = 99.0
+offset_right = -254.0
+offset_bottom = 152.0
+action_left = &"izquierda"
+action_right = &"derecha"
+action_up = &"arriba"
+action_down = &"abajo"
+
+[connection signal="pressed" from="CanvasLayer/Volver" to="CanvasLayer/Volver" method="_on_pressed"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Absorber" to="." method="_on_absorber_area_entered"]

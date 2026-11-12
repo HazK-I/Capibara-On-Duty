@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hfw7p8pffyqu"]
+
+[ext_resource type="Script" uid="uid://ykrkfb544ofm" path="res://Escenas/enemigo.gd" id="1_becj5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhc54"]
+radius = 20.59126
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=170415563 groups=["Enemigos"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_becj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=347724640]
+position = Vector2(-3, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057536418]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_lhc54")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cq7e8lmvl38j5"]
+
+[ext_resource type="Texture2D" uid="uid://wno1xkxey072" path="res://Assets/UI/Menus/Botón_jugar.png" id="1_ft1ng"]
+[ext_resource type="Script" uid="uid://cds4450ky1rx" path="res://Escenas/boton_jugar.gd" id="1_xv3xs"]
+[ext_resource type="Texture2D" uid="uid://b5bh4air5qjue" path="res://Assets/UI/Menus/Titulo_del_juego.png" id="3_qncgo"]
+
+[sub_resource type="Theme" id="Theme_cbxvy"]
+default_font_size = 47
+
+[node name="MenuPrincipal" type="Control" unique_id=523555327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=750624801]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotonJugar" type="TextureButton" parent="." unique_id=944521336]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = 21.0
+offset_right = 150.0
+offset_bottom = 130.75
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cbxvy")
+texture_normal = ExtResource("1_ft1ng")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_xv3xs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=438574242]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -536.5
+offset_right = 536.5
+offset_bottom = 397.0
+grow_horizontal = 2
+texture = ExtResource("3_qncgo")
+expand_mode = 1
+
+[connection signal="pressed" from="BotonJugar" to="BotonJugar" method="_on_pressed"]

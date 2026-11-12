@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ce66mt6ehs3ku"]
+
+[ext_resource type="Texture2D" uid="uid://c6q0a7soit1kd" path="res://Assets/Armas/Palo/Efecto/Animacion_vara_0001.png" id="1_tdihc"]
+[ext_resource type="Script" uid="uid://cyxkv87u71m0t" path="res://Escenas/palo.gd" id="1_vn6vd"]
+[ext_resource type="Texture2D" uid="uid://ksa32rm83i7m" path="res://Assets/Armas/Palo/Efecto/Animacion_vara_0002.png" id="2_vn6vd"]
+[ext_resource type="Texture2D" uid="uid://cxgco6qt8heoi" path="res://Assets/Armas/Palo/Efecto/Animacion_vara_0003.png" id="3_6081i"]
+[ext_resource type="Texture2D" uid="uid://bpyswlrd3ybrm" path="res://Assets/Armas/Palo/Efecto/Animacion_vara_0004.png" id="4_4i1vp"]
+[ext_resource type="Texture2D" uid="uid://cu3ao516uwq07" path="res://Assets/Armas/Palo/Efecto/Animacion_vara_0005.png" id="5_xh2ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlr2"]
+size = Vector2(29, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbxvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tdihc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vn6vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6081i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4i1vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xh2ry")
+}],
+"loop": 0,
+"name": &"atacar",
+"speed": 8.0
+}]
+
+[node name="palo" type="Area2D" unique_id=131411045]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_vn6vd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=308915918]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_gdlr2")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=948235042]
+position = Vector2(11.5, 0)
+scale = Vector2(1.71875, 1)
+sprite_frames = SubResource("SpriteFrames_cbxvy")
+animation = &"atacar"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
